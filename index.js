@@ -14,7 +14,10 @@ app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 20
 app.use(express.static('public'));
 
 
-app.get('/api/:date', (req, res) => {
+app.get('/api/:date?', (req, res) => {
+  //! if the date const. returns invalid then try to 
+  //! call parseInt() or Number() to convert the value into a number
+  //! if both are unsuccessful then the input is invalid
   if(req.params['date']){
     const rawDate = req.params['date'];
     console.log(rawDate);
@@ -23,18 +26,26 @@ app.get('/api/:date', (req, res) => {
     let UnixTimestamp;
     try{
       dateObj = new Date(rawDate);
-      UnixTimestamp = dateObj.getTime();
-      UTCstring = dateObj.toUTCString();
+      console.log(dateObj);
+      if(dateObj != 'Invalid Date'){
+        UnixTimestamp = dateObj.getTime();
+        UTCstring = dateObj.toUTCString();
+      }
+      else{
+        res.status(400).json({error: "Invalid Date"});
+        return;
+      }
     }catch(error){
-      res.status(500).json({"Error": "Invalid date"});
+      res.status(500).json({error: "Invalid Date"});
       return;
     }
-    res.status(200).json({"unix":UnixTimestamp, "UTC": UTCstring});
+    res.status(200).json({"unix":UnixTimestamp, "utc": UTCstring});
     return;
   }
-  res.status(400).json({"Error": "Invalid request params"});
+  res.status(400).json({"error": "Invalid"});
   return;
 });
+
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
