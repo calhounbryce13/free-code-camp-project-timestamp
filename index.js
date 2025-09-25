@@ -19,13 +19,17 @@ app.get('/api/:date', (req, res) => {
     const rawDate = req.params['date'];
     console.log(rawDate);
     let dateObj;
+    let UTCstring;
+    let UnixTimestamp;
     try{
       dateObj = new Date(rawDate);
+      UnixTimestamp = dateObj.getTime();
+      UTCstring = dateObj.toUTCString();
     }catch(error){
       res.status(500).json({"Error": "Invalid date"});
       return;
     }
-    res.status(200).json({"unix":dateObj.getTime()});
+    res.status(200).json({"unix":UnixTimestamp, "UTC": UTCstring});
     return;
   }
   res.status(400).json({"Error": "Invalid request params"});
