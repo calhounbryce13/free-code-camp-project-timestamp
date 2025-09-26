@@ -15,34 +15,35 @@ app.use(express.static('public'));
 
 
 app.get('/api/:date?', (req, res) => {
-  //! if the date const. returns invalid then try to 
-  //! call parseInt() or Number() to convert the value into a number
-  //! if both are unsuccessful then the input is invalid
+  let dateObj;
   if(req.params['date']){
     const rawDate = req.params['date'];
-    console.log(rawDate);
-    let dateObj;
-    let UTCstring;
+    dateObj = new Date(rawDate);
     let UnixTimestamp;
-    try{
-      dateObj = new Date(rawDate);
-      console.log(dateObj);
-      if(dateObj != 'Invalid Date'){
-        UnixTimestamp = dateObj.getTime();
+    let UTCstring;
+    if(dateObj != 'Invalid Date'){
+      UnixTimestamp = dateObj.getTime();
+      UTCstring = dateObj.toUTCString();
+      res.status(200).json({"unix":UnixTimestamp, "utc": UTCstring});
+    }
+    else{
+      if(new Date(parseInt(rawDate)) != 'Invalid Date'){
+        dateObj = new Date(parseInt(rawDate));
+        UnixTimestamp = parseInt(rawDate);
         UTCstring = dateObj.toUTCString();
+        res.status(200).json({"unix": UnixTimestamp, "utc": UTCstring});
       }
       else{
-        res.status(400).json({error: "Invalid Date"});
-        return;
+        res.status(400).json({error: "Invalid date"});
       }
-    }catch(error){
-      res.status(500).json({error: "Invalid Date"});
-      return;
     }
-    res.status(200).json({"unix":UnixTimestamp, "utc": UTCstring});
-    return;
   }
-  res.status(400).json({"error": "Invalid"});
+  else{
+    dateObj = new Date();
+    UnixTimestamp = dateObj.getTime();
+    UTCstring = dateObj.toUTCString();
+    res.status(200).json({"unix":UnixTimestamp, "utc": UTCstring});
+  }
   return;
 });
 
