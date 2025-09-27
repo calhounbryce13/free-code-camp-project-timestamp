@@ -2,17 +2,17 @@
 I completed this project as part of the freeCodeCamp curriculum.
 
 ## Overview
-This project was built as part of the [Backend Development & APIs] section of the freeCodeCamp course.
+This project was built as part of the Backend Development & APIs section of the freeCodeCamp course.
 The starter code was provided by freeCodeCamp, and I implemented the functionality required to meet the project specifications.
 
 ## Features Implemented
-- [Defined a route handler at the endpoint '/api/:date?' to respond with a JSON object containing a unix timestamp and UTC string of the given date parameter]
+- Defined a route handler at the endpoint '/api/:date?' to respond with a JSON object containing a unix timestamp and UTC string of the given date parameter
 
 
 ## Tech Stack
-- Language(s): [JavaScript / Node.js]
-- Frameworks/Libraries: [Express]
-- Tools: [Git, npm]
+- Language(s): JavaScript / Node.js
+- Frameworks/Libraries: Express
+- Tools: Git, npm
 
 ## What I Learned
 - How to generate unix timestamps for any given date, as well as UTC strings
