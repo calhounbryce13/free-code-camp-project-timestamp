@@ -21,7 +21,7 @@ The starter code was provided by freeCodeCamp, and I implemented the functionali
 
 ## Running the Project
 1. Clone the repo:
-   git clone <this-repo-url>
+   git clone `https://github.com/calhounbryce13/free-code-camp-project-timestamp/tree/main`
    cd <project-folder>
 
 2. Install dependencies:
