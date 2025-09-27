@@ -3,7 +3,7 @@ I completed this project as part of the freeCodeCamp curriculum.
 
 ## Overview
 This project was built as part of the Backend Development & APIs section of the freeCodeCamp course.
-The starter code was provided by freeCodeCamp, and I implemented the functionality required to meet the project specifications.
+The starter code was provided by freeCodeCamp, and I implemented the functionality required to meet the project specifications within `index.js`.
 
 ## Features Implemented
 - Defined a route handler at the endpoint '/api/:date?' to respond with a JSON object containing a unix timestamp and UTC string of the given date parameter
