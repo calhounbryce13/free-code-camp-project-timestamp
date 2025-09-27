@@ -22,15 +22,16 @@ The starter code was provided by freeCodeCamp, and I implemented the functionali
 ## Running the Project
 1. Clone the repo:
    git clone `https://github.com/calhounbryce13/free-code-camp-project-timestamp/tree/main`
-   cd <project-folder>
+   
+3. Navigate to the project folder on your machine
+   
+4. Install dependencies:
+   `npm install`
 
-2. Install dependencies:
-   npm install
+5. Start the server:
+   `npm start`
 
-3. Start the server:
-   npm start
-
-4. Visit http://localhost:3000 in your browser.
+6. Visit `http://localhost:3000` in your browser.
 
 ## Attribution
 - Starter code provided by freeCodeCamp.
