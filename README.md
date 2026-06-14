@@ -1,4 +1,5 @@
 # Timestamp Microservice
+#### (THIS PROGRAM/APP WAS NOT MADE WITH ANY CODE THAT WAS GENERATED FROM A LARGE LANGUAGE MODEL, EX. CHATGPT, COPILOT).
 I completed this project as part of the freeCodeCamp curriculum.
 
 ## Overview
