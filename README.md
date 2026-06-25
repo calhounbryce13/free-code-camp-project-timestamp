@@ -36,5 +36,5 @@ The starter code was provided by freeCodeCamp, and I implemented the functionali
 
 ## Attribution
 - Starter code provided by freeCodeCamp.
-- All additional functionality and implementation completed by Bryce Calhoun.
+- All additional functionality and implementation completed by Bryce Calhoun (me).
 
